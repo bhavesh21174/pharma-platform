@@ -1,0 +1,20 @@
+:root{
+  --primary:#0d6efd; --sidebar-w:250px; --sidebar-bg:#0f172a; --sidebar-fg:#cbd5e1;
+}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:#f6f8fb;}
+.app-sidebar{
+  position:fixed;top:0;left:0;height:100vh;width:var(--sidebar-w);
+  background:var(--sidebar-bg);color:var(--sidebar-fg);padding:1rem;overflow-y:auto;
+}
+.app-sidebar .brand{color:#fff;font-weight:700;font-size:1.1rem;margin-bottom:1rem;}
+.app-sidebar .nav-link{color:var(--sidebar-fg);border-radius:.5rem;padding:.5rem .75rem;font-size:.9rem;}
+.app-sidebar .nav-link:hover,.app-sidebar .nav-link.active{background:rgba(255,255,255,.08);color:#fff;}
+.app-main{margin-left:var(--sidebar-w);padding:1.25rem;}
+@media(max-width:991px){
+  .app-sidebar{transform:translateX(-100%);transition:transform .25s;z-index:1040;}
+  .app-sidebar.open{transform:none;}
+  .app-main{margin-left:0;}
+}
+.stat-card{border-radius:1rem;border:1px solid #e5e7eb;background:#fff;padding:1rem 1.25rem;height:100%;}
+.stat-card .value{font-size:1.5rem;font-weight:700;}
+.stat-card .label{color:#6b7280;font-size:.8rem;text-transform:uppercase;letter-spacing:.03em;}
